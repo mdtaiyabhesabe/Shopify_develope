@@ -1,0 +1,27 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "9727a186e6aae2a8743b9295bd544ecb"
+name = "Payment App"
+handle = "test-12402"
+application_url = "https://dev-merchantapi.hesabe.com/api/v1/shopify"
+embedded = false
+
+[build]
+dev_store_url = "stagng-app.myshopify.com"
+include_config_on_deploy = true
+
+[auth]
+redirect_urls = [
+  "https://dev-merchantapi.hesabe.com/api/v1/shopify/services"
+]
+
+[webhooks]
+api_version = "2024-10"
+
+  [webhooks.privacy_compliance]
+  customer_deletion_url = "https://dev-merchantapi.hesabe.com/api/shopify/webhooks/customer_redact"
+  customer_data_request_url = "https://dev-merchantapi.hesabe.com/api/shopify/webhooks/customer_data_request"
+  shop_deletion_url = "https://dev-merchantapi.hesabe.com/api/shopify/webhookss/shop_redact"
+
+[pos]
+embedded = false

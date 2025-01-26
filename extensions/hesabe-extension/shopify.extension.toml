@@ -1,0 +1,24 @@
+api_version = "2024-10"
+
+[[extensions]]
+name = "hesabe extension"
+type = "payments_extension"
+handle = "hesabe-extension"
+payment_session_url = "https://testapi.hesabe.com/api/checkout/indirect/shopifyapp"
+refund_session_url = "https://testapi.hesabe.com/api/checkout/indirect/shopifyapp"
+capture_session_url = "https://testapi.hesabe.com/api/checkout/indirect/shopifyapp"
+void_session_url = "https://testapi.hesabe.com/api/checkout/indirect/shopifyapp"
+merchant_label = "Hesabe"
+supported_countries = [ "KW" ]
+supported_payment_methods = [
+  "knet",
+  "visa",
+  "master"
+]
+test_mode_available = true
+supports_3ds = true
+supports_deferred_payments = false
+supports_installments = false
+
+  [[extensions.targeting]]
+  target = "payments.offsite.render"
